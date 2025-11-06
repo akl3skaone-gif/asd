@@ -1,11 +1,12 @@
+import os
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 
-# BotFather'dan aldığın token'ı buraya yaz
-import os
+# 🔑 BOT_TOKEN artık ortam değişkeninden okunuyor
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-
+if not BOT_TOKEN:
+    raise ValueError("❌ BOT_TOKEN environment variable is missing! Add it in Render settings.")
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
@@ -30,5 +31,3 @@ async def send_welcome(message: types.Message):
 if __name__ == "__main__":
     print("✅ Trade Levand bot is running...")
     executor.start_polling(dp, skip_updates=True)
-
-
