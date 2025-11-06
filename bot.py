@@ -3,7 +3,8 @@ from aiogram.utils import executor
 
 # BotFather'dan aldığın token'ı buraya yaz
 import os
-BOT_TOKEN = os.getenv("8360439639:AAHW4DEIXsekfPq9xlyGdd7_gOQ18s3HnhE")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
 
 
 bot = Bot(token=BOT_TOKEN)
@@ -29,4 +30,5 @@ async def send_welcome(message: types.Message):
 if __name__ == "__main__":
     print("✅ Trade Levand bot is running...")
     executor.start_polling(dp, skip_updates=True)
+
 
